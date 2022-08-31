@@ -6,9 +6,34 @@
 #include "split.h"
 #include "antimater.h"
 
+void particles_creation_tests(){
+
+    std::pair<float,float> position {10.3, 11.27};
+    std::pair<float,float> speed {21.58, 41.44};
+
+    Normal normal_test(10, 44.4, position, speed);
+    std::cout << normal_test.get_id() << std::endl;
+    std::cout << normal_test.get_mass() << std::endl;
+    std::cout << normal_test.get_position().first << std::endl;
+    std::cout << normal_test.get_position().second << std::endl;
+    std::cout << normal_test.get_speed().first << std::endl;
+    std::cout << normal_test.get_speed().second << std::endl;
+
+    std::cout << std::endl << std::endl;
+
+    Antigravity antigravity_test(10, 55.5, position, speed);
+    std::cout << antigravity_test.get_id() << std::endl;
+    std::cout << antigravity_test.get_mass() << std::endl;
+    std::cout << antigravity_test.get_position().first << std::endl;
+    std::cout << antigravity_test.get_position().second << std::endl;
+    std::cout << antigravity_test.get_speed().first << std::endl;
+    std::cout << antigravity_test.get_speed().second << std::endl;
+
+}
+
 
 int main(int argc, char **argv){
-    // std::cout << argv[1] << ", " << argv[2] << ", " << argv[3] << std::endl;
-    // std::cout << "Hello world" << std::endl;
+    
+    particles_creation_tests();
     return 0;
 }

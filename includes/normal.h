@@ -2,6 +2,7 @@
 #define NORMAL_H
 #include <utility>
 #include "particle.h"
+#include <iostream>
 
 class Positive;
 class Negative;
