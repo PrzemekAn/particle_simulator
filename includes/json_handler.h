@@ -5,12 +5,11 @@
 #include <vector>
 #include <string>
 #include "simulation_data.h"
+#include "simulation_properties.h"
 
-class Simulation_properties;
 
 class JSON_handler{
     private:
-        std::fstream m_file;
         Simulation_properties read_header();
         std::vector<Normal> read_body();
 

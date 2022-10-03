@@ -1,13 +1,13 @@
 #ifndef POSITIVE_H
 #define POSITIVE_H
-#include <utility>
+#include <vector>
 #include "normal.h"
 
 class Negative;
 
 class Positive: public Normal{
     public:
-        Positive(int id, float mass, std::pair<float,float> &position, std::pair<float,float>& speed);
+        Positive(int id, float mass, std::vector<float> position, std::vector<float> speed);
         ~Positive();
         void change_attributes_after_hit(Particle& particle) override;
         void change_attributes_after_hit(Positive& positive);

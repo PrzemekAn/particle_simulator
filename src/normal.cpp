@@ -8,7 +8,7 @@ int Normal::give_the_id(){
     return id;
 }
 
-Normal::Normal(int id, float mass, std::pair<float,float>&position, std::pair<float,float>&speed):
+Normal::Normal(int id, float mass, std::vector<float> position, std::vector<float> speed):
     m_id{give_the_id()},
     m_mass{mass}, 
     m_position{position}, 
@@ -36,11 +36,11 @@ float Normal::get_mass(){
     return m_mass;
 }
 
-std::pair<float,float> Normal::get_position(){
+std::vector<float> Normal::get_position(){
     return m_position;
 }
 
-std::pair<float,float> Normal::get_speed(){
+std::vector<float> Normal::get_speed(){
     return m_speed;
 }
 

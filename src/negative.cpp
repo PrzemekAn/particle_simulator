@@ -1,6 +1,6 @@
 #include "negative.h"
 
-Negative::Negative(int id, float mass, std::pair<float,float> & position, std::pair<float,float> & speed):Normal(id, mass, position, speed){}
+Negative::Negative(int id, float mass, std::vector<float> position, std::vector<float> speed):Normal(id, mass, position, speed){}
 
 void Negative::change_attributes_after_hit(Particle & particle){
 

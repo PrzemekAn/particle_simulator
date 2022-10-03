@@ -1,14 +1,15 @@
 #ifndef SPLIT_H
 #define SPLIT_H
 #include "normal.h"
-#include <utility>
+#include <vector>
+#include <memory>
 
 class Split: public Normal{
     private:
-        Particle *split();
+        std::unique_ptr<Particle> split();
 
     public:
-        Split(int id, float mass, std::pair<float,float> &position, std::pair<float,float>& speed);
+        Split(int id, float mass, std::vector<float> position, std::vector<float> speed);
         ~Split();
         void change_attributes_after_hit(Particle & particle) override;
 };

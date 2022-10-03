@@ -1,6 +1,6 @@
 #include "antimater.h"
 
-Antimater::Antimater(int id, float mass, std::pair<float,float>&position, std::pair<float,float>&speed): Normal(id, mass, position, speed){}
+Antimater::Antimater(int id, float mass, std::vector<float> position, std::vector<float> speed): Normal(id, mass, position, speed){}
 
 Antimater::~Antimater() = default;
 

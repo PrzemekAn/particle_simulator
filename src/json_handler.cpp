@@ -8,8 +8,7 @@ Simulation_properties JSON_handler::read_header(){}
 std::vector<Normal> JSON_handler::read_body(){}
 */
 //public
-JSON_handler::JSON_handler(std::string name):
-    m_file{name}{}
+JSON_handler::JSON_handler(std::string name){}
 
 void JSON_handler::save_to_json(){}
 
