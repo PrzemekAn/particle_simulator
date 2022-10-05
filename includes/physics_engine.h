@@ -9,10 +9,10 @@ class Physics_engine{
     void interact();
     void hit();
     public:
-        Physics_engine(Simulation_data& data);
+        Physics_engine(Simulation_data && data);
         int run();
         int run_all();
-        const Simulation_data get_simulation_data();
+        const Simulation_data & get_simulation_data();
         const int get_iteration();
         void set_iteration(int iteration);
         bool finished();

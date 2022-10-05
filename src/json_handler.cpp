@@ -5,7 +5,7 @@
 /*
 Simulation_properties JSON_handler::read_header(){}
 
-std::vector<Normal> JSON_handler::read_body(){}
+std::vector<std::unique_ptr<Particle>> JSON_handler::read_body(){}
 */
 //public
 JSON_handler::JSON_handler(std::string name){}

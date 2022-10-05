@@ -2,5 +2,5 @@
 #include <iostream>
 
 Particle::~Particle(){
-    std::cout << "Particle's pure virtual destructor is called\n";
+    // std::cout << "Particle's pure virtual destructor is called\n";
 }

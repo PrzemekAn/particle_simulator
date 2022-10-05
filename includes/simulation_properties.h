@@ -4,10 +4,11 @@
 class Simulation_properties
 {
 public:
-    int m_height{0};
-    int m_width{0};
-    int m_iterations_per_second{0};
+    int m_height;
+    int m_width;
+    int m_iterations_per_second;
     Simulation_properties(int height, int width, int iterations);
+    // Simulation_properties(Simulation_properties & other);
     ~Simulation_properties();
 };
 

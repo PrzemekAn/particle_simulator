@@ -28,19 +28,19 @@ void Normal::change_attributes_after_hit(Positive& positive){
 void Normal::change_attributes_after_hit(Negative& negative){
 }
 
-int Normal::get_id(){
+const int Normal::get_id(){
     return m_id;
 }
 
-float Normal::get_mass(){
+const float Normal::get_mass(){
     return m_mass;
 }
 
-std::vector<float> Normal::get_position(){
+const std::vector<float> Normal::get_position(){
     return m_position;
 }
 
-std::vector<float> Normal::get_speed(){
+const std::vector<float> Normal::get_speed(){
     return m_speed;
 }
 

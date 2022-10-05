@@ -1,15 +1,20 @@
 #ifndef SIMULATION_DATA_H
 #define SIMULATION_DATA_H
-#include <utility>
-#include <vector>
+
 #include "simulation_properties.h"
-#include "normal.h"
+#include "particle.h"
+#include <vector>
+#include <utility>
+
 
 class Simulation_data{
-    public:
+    private:
+    std::vector<Particle_uptr> m_particles;
     Simulation_properties m_properties;
-    std::vector<Normal> m_particles;
-    Simulation_data(Simulation_properties& properties, std::vector<Normal>& particles);
+
+    public:
+    Simulation_data(Simulation_properties properties, std::vector<Particle_uptr> particles);
+    Simulation_data(Simulation_data&& other);
     ~Simulation_data();
 };
 
