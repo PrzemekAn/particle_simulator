@@ -6,9 +6,8 @@ Simulation_data::Simulation_data(Simulation_properties properties, std::vector<P
 
 Simulation_data::Simulation_data(Simulation_data&& other): 
     m_particles{std::move(other.m_particles)},
-    m_properties{other.m_properties}
+    m_properties{std::move(other.m_properties)}
 {
-
 }
 
 Simulation_data::~Simulation_data() = default;
