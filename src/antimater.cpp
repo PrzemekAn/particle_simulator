@@ -7,3 +7,7 @@ Antimater::~Antimater() = default;
 void Antimater::change_attributes_after_hit(Particle& Particle){}
 
 void Antimater::substract_mass_from_particle(Particle& particle){}
+
+void Antimater::change_attributes(){
+    
+}

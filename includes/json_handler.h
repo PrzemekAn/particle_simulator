@@ -16,7 +16,6 @@ class JSON_handler{
     public:
         JSON_handler(std::string name);
         void save_to_json();
-        Simulation_data load_simulation_data();
         ~JSON_handler();
 };
 

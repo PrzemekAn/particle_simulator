@@ -24,11 +24,11 @@ class Normal:public Particle{
         void change_attributes_after_hit(Particle& particle) override;
         void change_attributes_after_hit(Positive& positive);
         void change_attributes_after_hit(Negative& negative);
-        const int get_id();
-        const float get_mass();
-        const std::vector<float> get_position();
-        const std::vector<float> get_speed();
-        int give_the_id();
+        void change_attributes();
+        const int id();
+        const float mass();
+        const std::vector<float> position();
+        const std::vector<float> speed();
         ~Normal();
 };
 

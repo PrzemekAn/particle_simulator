@@ -12,6 +12,7 @@ class Negative:public Normal {
         void change_attributes_after_hit(Particle& particle) override;
         void change_attributes_after_hit(Positive& positive);
         void change_attributes_after_hit(Negative& negative);
+        void change_attributes() override;
 };
 
 #endif

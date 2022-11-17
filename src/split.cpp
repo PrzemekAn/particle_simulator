@@ -6,6 +6,10 @@ Split::~Split() = default;
 
 void Split::change_attributes_after_hit(Particle & particle){}
 
+void Split::change_attributes(){
+    
+}
+
 std::unique_ptr<Particle> Split::split(){
     //temporary fixed numbers
     int id{10};

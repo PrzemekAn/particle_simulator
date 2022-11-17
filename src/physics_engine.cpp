@@ -4,18 +4,18 @@
 void Physics_engine::interact(){}
 void Physics_engine::hit(){}
 
-Physics_engine::Physics_engine(Simulation_data && data): 
+Physics_engine::Physics_engine(std::unique_ptr<Simulation_data> data): 
     m_data{std::move(data)}{}
 
 int Physics_engine::run(){
-    return 1; //placeholder
+    return 2137; //placeholder
 }
 int Physics_engine::run_all(){
-    return 1; //placeholder
+    return 2137; //placeholder
 }
 
-const Simulation_data & Physics_engine::get_simulation_data(){
-    return m_data;
+Simulation_data& Physics_engine::get_simulation_data(){
+    return *m_data.get();
 }
 
 const int Physics_engine::get_iteration(){

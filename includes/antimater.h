@@ -12,6 +12,7 @@ class Antimater: public Normal
         Antimater(int id, float mass, std::vector<float> position, std::vector<float> speed);
         ~Antimater();
         void change_attributes_after_hit(Particle & particle) override;
+        void change_attributes() override;
 };
 
 #endif

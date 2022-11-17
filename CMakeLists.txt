@@ -19,6 +19,9 @@ set(SRC
         src/physics_engine.cpp
         src/positive.cpp
         src/simulation_data.cpp
+        src/simulation_data_base.cpp
+        src/simulation_data_from_file.cpp
+        src/simulation_data_generator.cpp
         src/simulation_properties.cpp
         src/split.cpp)
 

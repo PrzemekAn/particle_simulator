@@ -7,4 +7,8 @@ void Antigravity::change_attributes_after_hit(Particle & particle){
 
 }
 
+void Antigravity::change_attributes(){
+    
+}
+
 Antigravity::~Antigravity() = default;

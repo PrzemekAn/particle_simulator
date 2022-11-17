@@ -1,21 +1,22 @@
 #ifndef SIMULATION_DATA_H
 #define SIMULATION_DATA_H
-
-#include "simulation_properties.h"
 #include "particle.h"
+#include "normal.h"
+#include "simulation_properties.h"
+#include "json_handler.h"
 #include <vector>
-#include <utility>
-
+#include <string>
 
 class Simulation_data{
-    private:
-    std::vector<Particle_uptr> m_particles;
-    Simulation_properties m_properties;
-
     public:
-    Simulation_data(Simulation_properties properties, std::vector<Particle_uptr> particles);
-    Simulation_data(Simulation_data&& other);
-    ~Simulation_data();
+        virtual std::vector<Particle_uptr>& particles() = 0;
+        virtual const std::vector<Particle_uptr>& particles() const = 0;
+        virtual Simulation_properties& properties() = 0;
+        virtual const Simulation_properties& properties() const = 0;
+        virtual void save_data(std::string file_path) = 0;
+        virtual void print_properties() = 0;
+        virtual void print_particles_data() = 0;
+        virtual ~Simulation_data();
 };
 
 #endif

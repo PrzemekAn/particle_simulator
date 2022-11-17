@@ -15,4 +15,8 @@ void Positive::change_attributes_after_hit(Negative & negative){
 
 }
 
+void Positive::change_attributes(){
+    
+}
+
 Positive::~Positive() = default;

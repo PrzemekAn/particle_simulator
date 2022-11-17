@@ -11,10 +11,11 @@ class Particle{
         virtual void change_attributes_after_hit(Particle& particle) = 0;
         virtual void change_attributes_after_hit(Positive& poisitive_particle);
         virtual void change_attributes_after_hit(Negative& negative_particle);
-        virtual const int get_id() = 0;
-        virtual const float get_mass() = 0;
-        virtual const std::vector<float> get_position() = 0;
-        virtual const std::vector<float> get_speed() = 0;
+        virtual void change_attributes() = 0;
+        virtual const int id() = 0;
+        virtual const float mass() = 0;
+        virtual const std::vector<float> position() = 0;
+        virtual const std::vector<float> speed() = 0;
         virtual ~Particle();
 };
 

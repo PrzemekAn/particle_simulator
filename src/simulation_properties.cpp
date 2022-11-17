@@ -1,5 +1,11 @@
 #include "simulation_properties.h"
 
+Simulation_properties::Simulation_properties(): 
+    m_height{900},
+    m_width{1800},
+    m_iterations_per_second{120}
+    {}
+
 Simulation_properties::Simulation_properties(int height, int width, int iterations):
     m_height{height}, 
     m_width{width},
