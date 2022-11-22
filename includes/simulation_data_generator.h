@@ -1,7 +1,9 @@
 #ifndef SIMULATION_DATA_GENERATOR
 #define SIMULATION_DATA_GENERATOR
 
-#include <simulation_data_base.h>
+#include "simulation_data_base.h"
+#include "particle.h"
+#include <random>
 
 class Simulation_data_generator: public Simulation_data_base{
     public:

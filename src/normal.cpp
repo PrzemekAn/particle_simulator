@@ -25,16 +25,32 @@ const int Normal::id(){
     return m_id;
 }
 
+// const int Normal::id() const{
+//     return m_id;
+// }
+
 const float Normal::mass(){
     return m_mass;
 }
+
+// const float Normal::mass() const{
+//     return m_mass;
+// }
 
 const std::vector<float> Normal::position(){
     return m_position;
 }
 
+// const std::vector<float> Normal::position() const{
+//     return m_position;
+// }
+
 const std::vector<float> Normal::speed(){
     return m_speed;
 }
+
+// const std::vector<float> Normal::speed() const{
+//     return m_speed;
+// }
 
 Normal::~Normal() = default;

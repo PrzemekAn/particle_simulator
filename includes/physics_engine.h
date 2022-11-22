@@ -13,10 +13,11 @@ class Physics_engine{
         Physics_engine(std::unique_ptr<Simulation_data> data);
         int run();
         int run_all();
-        Simulation_data& get_simulation_data();
+        const Simulation_data& get_simulation_data();
         const int get_iteration();
         void set_iteration(int iteration); // czy potrzebuję tu przyjmować iteracje jako agument?
         bool finished();
+        std::string type_info(int index);
         ~Physics_engine();
 };
 

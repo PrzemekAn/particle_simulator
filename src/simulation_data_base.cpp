@@ -2,6 +2,8 @@
 
 int give_id();
 
+Simulation_data_base::Simulation_data_base(){}
+
 Simulation_data_base::Simulation_data_base(std::string file_path){}
 
 
@@ -44,14 +46,14 @@ void Simulation_data_base::save_data(std::string file_path){
 void Simulation_data_base::print_properties(){
     std::cout << "Height: " << m_properties.m_height << std::endl;
     std::cout << "Width: " << m_properties.m_width << std::endl;
-    std::cout << "Iterations: " << m_properties.m_iterations_per_second << std::endl;
+    std::cout << "Iterations: " << m_properties.m_iterations_per_second << std::endl << std::endl;
 }
 
-// void Simulation_data_base::print_properties() const{
-//     std::cout << "Height: " << m_properties.m_height << std::endl;
-//     std::cout << "Width: " << m_properties.m_width << std::endl;
-//     std::cout << "Iterations: " << m_properties.m_iterations_per_second << std::endl;
-// }
+void Simulation_data_base::print_properties() const{
+    std::cout << "Height: " << m_properties.m_height << std::endl;
+    std::cout << "Width: " << m_properties.m_width << std::endl;
+    std::cout << "Iterations: " << m_properties.m_iterations_per_second << std::endl<< std::endl;
+}
 
 void Simulation_data_base::print_particles_data(){
     for(Particle_uptr& uptr: m_particles){
@@ -62,14 +64,14 @@ void Simulation_data_base::print_particles_data(){
     }
 }
 
-// void Simulation_data_base::print_particles_data() const{
-//     for(const Particle_uptr& uptr: m_particles){
-//         std::cout << "ID: " << uptr.get()->id() << std::endl;
-//         std::cout << "Mass: " << uptr.get()->mass() << std::endl;
-//         std::cout << "Position: " << uptr.get()->position()[0] << ", " << uptr.get()->position()[1] << std::endl;
-//         std::cout << "Speed: " << uptr.get()->speed()[0] << ", " << uptr.get()->speed()[1] << std::endl << std::endl;
-//     }
-// }
+void Simulation_data_base::print_particles_data() const{
+    for(const Particle_uptr& uptr: m_particles){
+        std::cout << "ID: " << uptr.get()->id() << std::endl;
+        std::cout << "Mass: " << uptr.get()->mass() << std::endl;
+        std::cout << "Position: " << uptr.get()->position()[0] << ", " << uptr.get()->position()[1] << std::endl;
+        std::cout << "Speed: " << uptr.get()->speed()[0] << ", " << uptr.get()->speed()[1] << std::endl << std::endl;
+    }
+}
 
 // Simulation_data
 

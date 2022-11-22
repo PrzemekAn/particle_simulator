@@ -10,11 +10,12 @@
 
 
 class Simulation_data_base: public Simulation_data{
-    private:
+    protected:
     std::vector<Particle_uptr> m_particles;
     Simulation_properties m_properties;
 
     public:
+    Simulation_data_base();
     Simulation_data_base(std::string file_path);
     Simulation_data_base(int quantity);
     Simulation_data_base(Simulation_properties properties, std::vector<Particle_uptr>&& particles);
@@ -25,9 +26,9 @@ class Simulation_data_base: public Simulation_data{
     const Simulation_properties& properties() const;
     void save_data(std::string file_path);
     void print_properties();
-    // void print_properties() const;
+    void print_properties() const;
     void print_particles_data();
-    // void print_particles_data() const;
+    void print_particles_data() const;
     ~Simulation_data_base();
 };
 

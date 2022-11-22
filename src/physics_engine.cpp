@@ -14,7 +14,7 @@ int Physics_engine::run_all(){
     return 2137; //placeholder
 }
 
-Simulation_data& Physics_engine::get_simulation_data(){
+const Simulation_data& Physics_engine::get_simulation_data(){
     return *m_data.get();
 }
 
@@ -28,6 +28,10 @@ void Physics_engine::set_iteration(int iteration){
 
 bool Physics_engine::finished(){
     return true;
+}
+
+std::string Physics_engine::type_info(int index){
+    return typeid(*get_simulation_data().particles()[index].get()).name();
 }
 
 Physics_engine::~Physics_engine() = default;

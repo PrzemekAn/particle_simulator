@@ -13,9 +13,13 @@ class Particle{
         virtual void change_attributes_after_hit(Negative& negative_particle);
         virtual void change_attributes() = 0;
         virtual const int id() = 0;
+        // virtual const int id() const = 0;
         virtual const float mass() = 0;
+        // virtual const float mass() const = 0;
         virtual const std::vector<float> position() = 0;
+        // virtual const std::vector<float> position() const = 0;
         virtual const std::vector<float> speed() = 0;
+        // virtual const std::vector<float> speed() const = 0;
         virtual ~Particle();
 };
 

@@ -2,6 +2,11 @@
 #define SIMULATION_DATA_H
 #include "particle.h"
 #include "normal.h"
+#include "antigravity.h"
+#include "antimater.h"
+#include "positive.h"
+#include "negative.h"
+#include "split.h"
 #include "simulation_properties.h"
 #include "json_handler.h"
 #include <vector>
@@ -15,7 +20,9 @@ class Simulation_data{
         virtual const Simulation_properties& properties() const = 0;
         virtual void save_data(std::string file_path) = 0;
         virtual void print_properties() = 0;
+        virtual void print_properties() const = 0;
         virtual void print_particles_data() = 0;
+        virtual void print_particles_data() const = 0;
         virtual ~Simulation_data();
 };
 

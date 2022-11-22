@@ -26,9 +26,13 @@ class Normal:public Particle{
         void change_attributes_after_hit(Negative& negative);
         void change_attributes();
         const int id();
+        // const int id() const;
         const float mass();
+        // const float mass() const;
         const std::vector<float> position();
+        // const std::vector<float> position() const;
         const std::vector<float> speed();
+        // const std::vector<float> speed() const;
         ~Normal();
 };
 
