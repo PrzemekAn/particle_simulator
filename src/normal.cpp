@@ -17,8 +17,14 @@ void Normal::change_attributes_after_hit(Positive& positive){
 void Normal::change_attributes_after_hit(Negative& negative){
 }
 
-void Normal::change_attributes(){
+void Normal::change_attributes(Particle& particle){
     
+}
+
+void Normal::change_attributes(Positive& positive){
+}
+
+void Normal::change_attributes(Negative& negative){
 }
 
 const int Normal::id(){

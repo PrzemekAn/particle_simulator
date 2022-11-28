@@ -22,10 +22,9 @@ int main(int argc, char **argv)
     Physics_engine engine(std::move(sim_data));
     engine.get_simulation_data().print_properties();
     engine.get_simulation_data().print_particles_data();
-    for(int i = 0; i < 10; ++i){
-        // std::cout << typeid(*engine.get_simulation_data().particles()[i].get()).name() << std::endl << std::endl;
-        std::cout << engine.type_info(i) << std::endl << std::endl;   
-    }
+    // for(int i = 0; i < 10; ++i){
+    //     std::cout << engine.type_info(i) << std::endl << std::endl;   
+    // }
 
     return 0;
 }

@@ -5,6 +5,7 @@
 #include "particle.h"
 #include <random>
 
+
 class Simulation_data_generator: public Simulation_data_base{
     public:
         Simulation_data_generator(int quantity);

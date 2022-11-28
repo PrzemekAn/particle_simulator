@@ -11,7 +11,9 @@ class Particle{
         virtual void change_attributes_after_hit(Particle& particle) = 0;
         virtual void change_attributes_after_hit(Positive& poisitive_particle);
         virtual void change_attributes_after_hit(Negative& negative_particle);
-        virtual void change_attributes() = 0;
+        virtual void change_attributes(Particle& particle) = 0;
+        virtual void change_attributes(Positive& poisitive_particle);
+        virtual void change_attributes(Negative& negative_particle);
         virtual const int id() = 0;
         // virtual const int id() const = 0;
         virtual const float mass() = 0;

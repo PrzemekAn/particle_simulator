@@ -14,7 +14,7 @@ void Negative::change_attributes_after_hit(Negative & negative){
 
 }
 
-void Negative::change_attributes(){
+void Negative::change_attributes(Particle& particle){
     
 }
 

@@ -6,7 +6,7 @@ Split::~Split() = default;
 
 void Split::change_attributes_after_hit(Particle & particle){}
 
-void Split::change_attributes(){
+void Split::change_attributes(Particle& particle){
     
 }
 

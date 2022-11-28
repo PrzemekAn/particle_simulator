@@ -8,7 +8,7 @@ class Antigravity: public Normal{
         Antigravity(int id, float mass, std::vector<float> position, std::vector<float> speed);
         ~Antigravity();
         void change_attributes_after_hit(Particle& particle) override;
-        void change_attributes() override;
+        void change_attributes(Particle& particle) override;
 };
 
 #endif

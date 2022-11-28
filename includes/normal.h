@@ -24,7 +24,9 @@ class Normal:public Particle{
         void change_attributes_after_hit(Particle& particle) override;
         void change_attributes_after_hit(Positive& positive);
         void change_attributes_after_hit(Negative& negative);
-        void change_attributes();
+        void change_attributes(Particle& particle) override;
+        void change_attributes(Positive& positive);
+        void change_attributes(Negative& negative);
         const int id();
         // const int id() const;
         const float mass();
