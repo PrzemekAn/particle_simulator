@@ -25,7 +25,7 @@ Simulation_data_from_file::Simulation_data_from_file(const char* file_path): Sim
     for(int i = 0; i < particles_arr_size; ++i){
         int flag{};
         for(int j = 0; j < part_types.size(); ++j){
-            if(!part_types[j].compare(particles[2].toObject().value("type").toString().toStdString())){
+            if(!part_types[j].compare(particles[i].toObject().value("type").toString().toStdString())){
                 flag = j;
                 break;
             }

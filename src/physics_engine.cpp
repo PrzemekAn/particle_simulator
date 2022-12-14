@@ -11,7 +11,7 @@ Physics_engine::Physics_engine(std::unique_ptr<Simulation_data> data):
     m_data{std::move(data)}{}
 
 int Physics_engine::run(int start){
-    //interact one particle with all
+    //interact one(start is position in vector) particle with all
     int vector_size = m_data.get()->particles().size();
     if(start >= 0 && start < vector_size){
         for(int i = 0; i < vector_size; ++i){
