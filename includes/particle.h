@@ -5,6 +5,7 @@
 
 class Positive;
 class Negative;
+class Simulation_properties;
 
 class Particle{
     public:
@@ -12,6 +13,7 @@ class Particle{
         virtual void change_attributes_after_hit(Positive& poisitive_particle);
         virtual void change_attributes_after_hit(Negative& negative_particle);
         virtual void change_attributes(Particle& particle) = 0;
+        virtual void change_attributes(Particle& particle, Simulation_properties& properties) = 0;
         virtual void change_attributes(Positive& poisitive_particle);
         virtual void change_attributes(Negative& negative_particle);
         virtual const int id() = 0;

@@ -4,7 +4,6 @@
 // #include "simulation_properties.h"
 // #include "particle.h"
 #include "simulation_data.h"
-// #include "give_id.h"
 #include <vector>
 #include <utility>
 
@@ -16,7 +15,7 @@ class Simulation_data_base: public Simulation_data{
 
     public:
     Simulation_data_base();
-    Simulation_data_base(std::string file_path);
+    Simulation_data_base(const char* file_path);
     Simulation_data_base(int quantity);
     Simulation_data_base(Simulation_properties properties, std::vector<Particle_uptr>&& particles);
     Simulation_data_base(Simulation_data_base&& other);

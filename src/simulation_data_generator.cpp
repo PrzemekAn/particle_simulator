@@ -3,7 +3,6 @@
 int give_id();
 
 Simulation_data_generator::Simulation_data_generator(int quantity){
-    enum particles_names{normal, antigravity, antimater, negetive, positive, split};
     std::random_device rd;
     std::mt19937 gen(rd());
 

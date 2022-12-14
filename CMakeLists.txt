@@ -13,7 +13,6 @@ set(SRC
         src/json_handler.cpp
         src/negative.cpp
         src/normal.cpp
-        src/particle_generator.cpp
         src/particle_simulator.cpp
         src/particle.cpp
         src/physics_engine.cpp
@@ -29,3 +28,5 @@ set(SRC
 
 
 add_executable(particle_simulator ${SRC})
+find_package(Qt6 REQUIRED COMPONENTS Core)
+target_link_libraries(particle_simulator PRIVATE Qt6::Core)

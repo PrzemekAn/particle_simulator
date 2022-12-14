@@ -1,12 +1,15 @@
 #ifndef NORMAL_H
 #define NORMAL_H
 #include "particle.h"
+#include "simulation_properties.h"
 #include <memory>
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 class Positive;
 class Negative;
+
 
 class Normal:public Particle{
     private:
@@ -25,6 +28,7 @@ class Normal:public Particle{
         void change_attributes_after_hit(Positive& positive);
         void change_attributes_after_hit(Negative& negative);
         void change_attributes(Particle& particle) override;
+        void change_attributes(Particle& particle, Simulation_properties& properties) override;
         void change_attributes(Positive& positive);
         void change_attributes(Negative& negative);
         const int id();

@@ -4,7 +4,7 @@ int give_id();
 
 Simulation_data_base::Simulation_data_base(){}
 
-Simulation_data_base::Simulation_data_base(std::string file_path){}
+Simulation_data_base::Simulation_data_base(const char* file_path){}
 
 
 Simulation_data_base::Simulation_data_base(int quantity){
