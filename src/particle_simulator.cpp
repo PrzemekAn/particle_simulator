@@ -34,20 +34,26 @@ double calculate_force(Particle& p1, Particle& p2){
 
 int main(int argc, char **argv)
 {
-    int part_count {3};
-    // std::unique_ptr<Simulation_data> sim_data(new Simulation_data_generator(part_count));
-    std::unique_ptr<Simulation_data> sim_data_file(new Simulation_data_from_file("../project_assumptions/Output_example.json"));
+    int part_count_for_generator{5};
+    // std::unique_ptr<Simulation_data> sim_data(new Simulation_data_generator(part_count_for_generator));
     // Physics_engine engine(std::move(sim_data));
+    std::unique_ptr<Simulation_data> sim_data_file(new 
+    Simulation_data_from_file("../project_assumptions/Output_example.json"));
     Physics_engine engine(std::move(sim_data_file));
-    // engine.get_simulation_data().print_properties();
-    engine.get_simulation_data().print_particles_data();
+
+    long unsigned int part_count {engine.get_simulation_data().particles().size()};
+    engine.get_simulation_data().print_properties();
+    // engine.get_simulation_data().print_particles_data();
+
+    
     // for(int i = 0; i < part_count; ++i){
     //     std::cout << engine.type_info(i) << std::endl << std::endl;   
     // }
+
     // engine.run(0);
     // engine.run_all();
     // engine.start_simulation();
-    // engine.get_simulation_data().print_particles_data();
+    engine.get_simulation_data().print_particles_data();
     
     return 0;
 }

@@ -2,7 +2,6 @@
 #define SIMULATION_DATA_FROM_FILE
 #include "simulation_data_base.h"
 #include <string>
-#include <filesystem>
 #include <QJsonDocument>
 #include <QFile>
 #include <QString>
