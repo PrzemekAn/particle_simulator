@@ -1,0 +1,71 @@
+{
+	"width": 1800,
+	"height": 900,
+	"iterations_per_second": 120,
+	"simulation": [
+		{
+			"iteration": 0,
+			"particles": [
+				{
+					"id": 0,
+					"type": "normal",
+					"weight": 16.03,
+					"position_x": 123.43,
+					"position_y": 543.01,
+					"velocity_x": 3.84,
+					"velocity_y": -9.39
+				},
+				{
+					"id": 1,
+					"type": "split",
+					"weight": 10.45,
+					"position_x": 742.00,
+					"position_y": 245.23,
+					"velocity_x": 0.01,
+					"velocity_y": 10.44
+				},
+				{
+					"id": 2,
+					"type": "antigravity",
+					"weight": 5.12,
+					"position_x": 898.98,
+					"position_y": 372.09,
+					"velocity_x": -10.26,
+					"velocity_y": 9.00
+				}
+			]
+		},
+		{
+			"iteration": 1,
+			"particles": [
+				{
+					"id": 0,
+					"type": "normal",
+					"weight": 16.03,
+					"position_x": 127.27,
+					"position_y": 563.01,
+					"velocity_x": 3.84,
+					"velocity_y": -9.39
+				},
+				{
+					"id": 1,
+					"type": "split",
+					"weight": 10.45,
+					"position_x": 742.01,
+					"position_y": 255.67,
+					"velocity_x": 0.01,
+					"velocity_y": 10.44
+				},
+				{
+					"id": 2,
+					"type": "antigravity",
+					"weight": 5.12,
+					"position_x": 888.72,
+					"position_y": 381.09,
+					"velocity_x": -10.26,
+					"velocity_y": 9.00
+				}
+			]
+		}
+	]
+}

@@ -43,5 +43,5 @@ find_package(GTest REQUIRED)
 add_subdirectory(tests/unit_tests) 
 include(CTest)
 
-configure_file(./project_assumptions/Output_example.json ../build/Output_example.json)
-configure_file(./project_assumptions/Output_example.json ../build/tests/unit_tests/Output_example.json)
+configure_file(./data/Output_example.json ${CMAKE_BINARY_DIR}/Output_example.json)
+configure_file(./data/Output_example.json ${CMAKE_BINARY_DIR}/tests/unit_tests/Output_example.json)
