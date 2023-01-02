@@ -4,8 +4,10 @@ project(particle_simulator LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include_directories(includes/)
+
 
 set(SRC   
         src/antigravity.cpp
@@ -26,7 +28,20 @@ set(SRC
 
 
 
-
-add_executable(particle_simulator ${SRC})
 find_package(Qt6 REQUIRED COMPONENTS Core)
-target_link_libraries(particle_simulator PRIVATE Qt6::Core)
+
+add_library(particle_simulator_dlib SHARED  ${SRC})
+target_link_libraries(particle_simulator_dlib PRIVATE Qt6::Core)
+
+add_library(particle_simulator_slib  ${SRC})
+target_link_libraries(particle_simulator_slib PRIVATE Qt6::Core)
+
+# add_executable(particle_simulator  ${SRC})
+# target_link_libraries(particle_simulator PRIVATE Qt6::Core)
+
+find_package(GTest REQUIRED)
+add_subdirectory(tests/unit_tests) 
+include(CTest)
+
+configure_file(./project_assumptions/Output_example.json ../build/Output_example.json)
+configure_file(./project_assumptions/Output_example.json ../build/tests/unit_tests/Output_example.json)
