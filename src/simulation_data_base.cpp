@@ -2,11 +2,13 @@
 
 int give_id();
 
+
 Simulation_data_base::Simulation_data_base(){}
 
+// ?????????????
 Simulation_data_base::Simulation_data_base(const char* file_path){}
 
-
+// ?????????????
 Simulation_data_base::Simulation_data_base(int quantity){
     for(int i = 0; i < quantity; i++){
         m_particles.emplace_back(new Normal(give_id(), 20, {10.3, 11.27}, {21.58, 41.44}));
@@ -57,6 +59,7 @@ void Simulation_data_base::print_properties() const{
 
 void Simulation_data_base::print_particles_data(){
     for(Particle_uptr& uptr: m_particles){
+        std::cout << "Type: " << typeid(*uptr.get()).name() << std::endl;
         std::cout << "ID: " << uptr.get()->id() << std::endl;
         std::cout << "Mass: " << uptr.get()->mass() << std::endl;
         std::cout << "Position: " << uptr.get()->position()[0] << ", " << uptr.get()->position()[1] << std::endl;
@@ -66,6 +69,7 @@ void Simulation_data_base::print_particles_data(){
 
 void Simulation_data_base::print_particles_data() const{
     for(const Particle_uptr& uptr: m_particles){
+        std::cout << "Type: " << typeid(*uptr.get()).name() << std::endl;
         std::cout << "ID: " << uptr.get()->id() << std::endl;
         std::cout << "Mass: " << uptr.get()->mass() << std::endl;
         std::cout << "Position: " << uptr.get()->position()[0] << ", " << uptr.get()->position()[1] << std::endl;

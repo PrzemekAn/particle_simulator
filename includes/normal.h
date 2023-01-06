@@ -6,6 +6,7 @@
 #include <vector>
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
 
 class Positive;
 class Negative;

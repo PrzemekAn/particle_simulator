@@ -1,7 +1,6 @@
 #include "normal.h"
-#include <cstdlib>
+#include "calculate_force.h"
 
-double calculate_force(Particle& p1, Particle& p2); 
 
 Normal::Normal(int id, float mass, std::vector<float> position, std::vector<float> speed):
     m_id{id},

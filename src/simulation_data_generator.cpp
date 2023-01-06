@@ -1,6 +1,6 @@
 #include "simulation_data_generator.h"
-
-int give_id();
+#include "give_id.h"
+// int give_id();
 
 Simulation_data_generator::Simulation_data_generator(int quantity){
     std::random_device rd;
