@@ -24,10 +24,6 @@ class Simulation_data_base: public Simulation_data{
     Simulation_properties& properties();
     const Simulation_properties& properties() const;
     void save_data(std::string file_path);
-    void print_properties();
-    void print_properties() const;
-    void print_particles_data();
-    void print_particles_data() const;
     ~Simulation_data_base();
 };
 

@@ -19,10 +19,6 @@ class Simulation_data{
         virtual Simulation_properties& properties() = 0;
         virtual const Simulation_properties& properties() const = 0;
         virtual void save_data(std::string file_path) = 0;
-        virtual void print_properties() = 0;
-        virtual void print_properties() const = 0;
-        virtual void print_particles_data() = 0;
-        virtual void print_particles_data() const = 0;
         virtual ~Simulation_data();
 };
 

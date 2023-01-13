@@ -25,5 +25,11 @@ Simulation_properties::Simulation_properties(Simulation_properties && other):
 {
 }
 
+// Simulation_properties::Simulation_properties(Simulation_properties && other):
+//     m_height{std::move(other.m_height)},
+//     m_width{std::move(other.m_width)},
+//     m_iterations_per_second{std::move(other.m_iterations_per_second)}
+// {
+// }
 
 Simulation_properties::~Simulation_properties() = default;

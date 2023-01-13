@@ -12,12 +12,41 @@
 #include <typeinfo>
 #include <gtest/gtest.h>
 
-// TEST(ParticleCreation, FromFile){
-//     std::unique_ptr<Simulation_data> sim_data_file(new 
-//     Simulation_data_from_file("./Output_example.json"));
-//     Physics_engine engine(std::move(sim_data_file));
-//     long unsigned int part_count {engine.get_simulation_data().particles().size()};
-//     std::cout << std::endl;
-//     engine.get_simulation_data().print_particles_data();
-//     std::cout << std::endl;
-// }
+TEST(ParticleCreation, FromFile){
+    std::unique_ptr<Simulation_data> sim_data_file(new 
+    Simulation_data_from_file("./Output_example.json"));
+    Physics_engine engine(std::move(sim_data_file));
+
+    std::cout << std::endl;
+
+    for(const Particle_uptr& uptr: engine.get_simulation_data().particles()){
+        std::cout << "Type: " << typeid(*uptr.get()).name() << std::endl;
+        std::cout << "ID: " << uptr.get()->id() << std::endl;
+        std::cout << "Mass: " << uptr.get()->mass() << std::endl;
+        std::cout << "Position: " << uptr.get()->position()[0] << ", " << uptr.get()->position()[1] << std::endl;
+        std::cout << "Speed: " << uptr.get()->speed()[0] << ", " << uptr.get()->speed()[1] << std::endl << std::endl;
+    }
+    std::cout << std::endl;
+
+    EXPECT_EQ(engine.get_simulation_data().particles()[0].get()->id(), 0);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[0].get()->mass(), 16.03);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[0].get()->position()[0], 127.27);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[0].get()->position()[1], 563.01);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[0].get()->speed()[0], 3.84);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[0].get()->speed()[1], -9.39);
+
+    EXPECT_EQ(engine.get_simulation_data().particles()[1].get()->id(), 1);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[1].get()->mass(), 10.45);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[1].get()->position()[0], 742.01);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[1].get()->position()[1], 255.67);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[1].get()->speed()[0], 0.01);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[1].get()->speed()[1], 10.44);
+
+    EXPECT_EQ(engine.get_simulation_data().particles()[2].get()->id(), 2);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[2].get()->mass(), 5.12);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[2].get()->position()[0], 888.72);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[2].get()->position()[1], 381.09);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[2].get()->speed()[0], -10.26);
+    EXPECT_FLOAT_EQ(engine.get_simulation_data().particles()[2].get()->speed()[1], 9.00);
+
+}

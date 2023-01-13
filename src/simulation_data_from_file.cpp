@@ -1,7 +1,7 @@
 #include "simulation_data_from_file.h"
 
 
-Simulation_data_from_file::Simulation_data_from_file(const char* file_path): Simulation_data_base(file_path){
+Simulation_data_from_file::Simulation_data_from_file(const char* file_path){
     QFile file(file_path);
     file.open(QIODevice::ReadOnly);
     QByteArray data = file.readAll();
