@@ -24,7 +24,7 @@ class Simulation_data_base: public Simulation_data{
     Simulation_properties& properties();
     const Simulation_properties& properties() const;
     void save_data(std::string file_path);
-    ~Simulation_data_base();
+    virtual ~Simulation_data_base();
 };
 
 #endif

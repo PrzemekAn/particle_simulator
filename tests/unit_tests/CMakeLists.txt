@@ -22,18 +22,19 @@ add_executable(${This} ${SRC})
 
 find_library(particle_simulator_dlib libparticle_simulator_dlib ${CMAKE_BINARY_DIR})
 
+find_package(GTest REQUIRED)
+
 target_link_libraries(${This} PUBLIC
+    gtest
     gtest_main
     particle_simulator_dlib
-    # ${CMAKE_BINARY_DIR}/libparticle_simulator_dlib.so
 )
 
+include(CTest)
 gtest_discover_tests(UTests)
 
-# message(${CMAKE_BINARY_DIR})
-# foreach(item IN LISTS SRC)
-#     message(${item}) 
-# endforeach()
+configure_file(${PROJECT_SOURCE_DIR}/data/Output_example.json ${CMAKE_BINARY_DIR}/tests/unit_tests/Output_example.json)
+
 
 
 

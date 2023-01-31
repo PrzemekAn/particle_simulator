@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 include_directories(includes/)
-
+option(BUILD_TESTS              "Builds all tests (gtest required)"         ON)
+option(BUILD_UNIT_TESTS         "Builds unit tests (gtest required)"        ON)
+option(BUILD_FUNCTIONAL_TESTS   "Builds funtional tests"                    OFF)
 
 set(SRC   
         src/antigravity.cpp
@@ -34,14 +36,16 @@ target_link_libraries(particle_simulator_dlib PUBLIC Qt6::Core)
 add_library(particle_simulator_slib  ${SRC})
 target_link_libraries(particle_simulator_slib PUBLIC Qt6::Core)
 
-# add_executable(particle_simulator  src/particle_simulator.cpp)
-# target_link_libraries(particle_simulator PUBLIC 
-#         Qt6::Core
-#         particle_simulator_dlib)
+if (${BUILD_TESTS})
+    enable_testing()
+     
+    if (${BUILD_UNIT_TESTS})
+        add_subdirectory("tests/unit_tests")
+    endif()
 
-find_package(GTest REQUIRED)
-add_subdirectory(tests/unit_tests) 
-include(CTest)
+    if (${BUILD_FUNCTIONAL_TESTS})
+        add_subdirectory("tests/functional_tests")
+    endif()
+endif()
 
-configure_file(./data/Output_example.json ${CMAKE_BINARY_DIR}/Output_example.json)
-configure_file(./data/Output_example.json ${CMAKE_BINARY_DIR}/tests/unit_tests/Output_example.json)
+# configure_file(./data/Output_example.json ${CMAKE_BINARY_DIR}/Output_example.json)

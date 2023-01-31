@@ -40,7 +40,7 @@ class Normal:public Particle{
         // const std::vector<float> position() const;
         const std::vector<float> speed();
         // const std::vector<float> speed() const;
-        ~Normal();
+        virtual ~Normal();
 };
 
 

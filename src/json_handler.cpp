@@ -3,12 +3,13 @@
 //private
 
 /*
-Simulation_properties JSON_handler::read_header(){}
-
-std::vector<std::unique_ptr<Particle>> JSON_handler::read_body(){}
+Simulation_properties JSON_handler::read_header(const char* file_path){}
+std::vector<Particle_uptr> JSON_handler::read_body(const char* file_path){}
 */
+
+
 //public
-JSON_handler::JSON_handler(std::string name){}
+JSON_handler::JSON_handler(){}
 
 void JSON_handler::save_to_json(){}
 

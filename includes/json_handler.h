@@ -10,11 +10,11 @@
 
 class JSON_handler{
     private:
-        Simulation_properties read_header();
-        std::vector<Particle_uptr> read_body();
+        Simulation_properties read_header(const char* file_path);
+        std::vector<Particle_uptr> read_body(const char* file_path);
 
     public:
-        JSON_handler(std::string name);
+        JSON_handler();
         void save_to_json();
         ~JSON_handler();
 };

@@ -21,7 +21,7 @@ int main(int argc, char **argv)
     Physics_engine engine(std::move(sim_data_file));
 
     long unsigned int part_count {engine.get_simulation_data().particles().size()};
-    engine.get_simulation_data().print_properties();
+    
     // engine.get_simulation_data().print_particles_data();
 
     
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     // engine.run(0);
     // engine.run_all();
     // engine.start_simulation();
-    engine.get_simulation_data().print_particles_data();
+
     
     return 0;
 }
