@@ -25,6 +25,20 @@ Simulation_properties::Simulation_properties(Simulation_properties && other):
 {
 }
 
+Simulation_properties& Simulation_properties::operator=(const Simulation_properties& other){
+    m_width = other.m_width;
+    m_height = other.m_height;
+    m_iterations_per_second = other.m_iterations_per_second;
+    return *this;
+}
+
+Simulation_properties& Simulation_properties::operator=(Simulation_properties&& other){
+    m_width = other.m_width;
+    m_height = other.m_height;
+    m_iterations_per_second = other.m_iterations_per_second;
+    return *this;
+}
+
 // Simulation_properties::Simulation_properties(Simulation_properties && other):
 //     m_height{std::move(other.m_height)},
 //     m_width{std::move(other.m_width)},

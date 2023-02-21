@@ -11,6 +11,8 @@ public:
     Simulation_properties(int height, int width, int iterations);
     Simulation_properties(const Simulation_properties & other);
     Simulation_properties(Simulation_properties && other);
+    Simulation_properties& operator=(const Simulation_properties & other);
+    Simulation_properties& operator=(Simulation_properties && other);
     ~Simulation_properties();
 };
 

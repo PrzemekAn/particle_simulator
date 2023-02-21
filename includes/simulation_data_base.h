@@ -4,6 +4,7 @@
 // #include "simulation_properties.h"
 // #include "particle.h"
 #include "simulation_data.h"
+#include "JSON_handler.h"
 #include <vector>
 #include <utility>
 
