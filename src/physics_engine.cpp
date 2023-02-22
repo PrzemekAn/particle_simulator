@@ -35,7 +35,7 @@ void Physics_engine::start_simulation(){
     int iterations{m_data.get()->properties().m_iterations_per_second};
     for(int i = 0; i < iterations; ++i){
         run_all();
-        m_current_iteration++;
+        ++m_current_iteration;
     }
 }
 

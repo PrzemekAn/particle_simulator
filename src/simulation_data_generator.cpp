@@ -3,6 +3,7 @@
 // int give_id();
 
 Simulation_data_generator::Simulation_data_generator(int quantity){
+    //todo simulation_properties
     std::random_device rd;
     std::mt19937 gen(rd());
 
