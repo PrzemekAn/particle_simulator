@@ -18,7 +18,7 @@ class Simulation_data{
         virtual const std::vector<Particle_uptr>& particles() const = 0;
         virtual Simulation_properties& properties() = 0;
         virtual const Simulation_properties& properties() const = 0;
-        virtual void save_data(std::string file_path) = 0;
+        virtual void save_data(const char* file_path) = 0;
         virtual ~Simulation_data();
 };
 

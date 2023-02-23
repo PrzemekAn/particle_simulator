@@ -1,5 +1,7 @@
 #include "json_handler.h"
 #include "simulation_properties.h"
+#include "simulation_data_from_file.h"
+#include "physics_engine.h"
 #include <gtest/gtest.h>
 
 TEST(JSON_handler, read_header){
@@ -52,4 +54,11 @@ TEST(JSON_handler, read_body){
     EXPECT_FLOAT_EQ(particles_uptr_vector[2].get()->speed()[0], -10.26);
     EXPECT_FLOAT_EQ(particles_uptr_vector[2].get()->speed()[1], 9.00);
 
+}
+
+TEST(JSON_handler, save_to_json_method){
+    Physics_engine engine(std::make_unique<Simulation_data_from_file>("./Output_example.json"));
+    JSON_handler test;
+    test.save_to_json(engine.get_simulation_data().properties(), engine.get_simulation_data().particles(), "./test.json");
+    
 }

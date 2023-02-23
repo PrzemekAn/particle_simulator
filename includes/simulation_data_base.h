@@ -4,7 +4,7 @@
 // #include "simulation_properties.h"
 // #include "particle.h"
 #include "simulation_data.h"
-#include "JSON_handler.h"
+// #include "JSON_handler.h"
 #include <vector>
 #include <utility>
 
@@ -24,7 +24,7 @@ class Simulation_data_base: public Simulation_data{
     const std::vector<Particle_uptr>& particles() const;
     Simulation_properties& properties();
     const Simulation_properties& properties() const;
-    void save_data(std::string file_path);
+    void save_data(const char* file_path);
     virtual ~Simulation_data_base();
 };
 

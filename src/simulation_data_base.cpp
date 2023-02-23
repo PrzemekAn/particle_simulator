@@ -41,8 +41,9 @@ const Simulation_properties& Simulation_data_base:: properties() const{
     return m_properties;
 }
 
-void Simulation_data_base::save_data(std::string file_path){
-
+void Simulation_data_base::save_data(const char* file_path){
+    //todo
+    JSON_handler json_handler;
 }
 
 
