@@ -21,8 +21,8 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
-// class Simulation_data;
-// class Simulation_data_base;
+class Simulation_data;
+class Simulation_data_base;
 // class Simulation_data_from_file;
 // class Simulation_data_generator;
 
@@ -31,7 +31,7 @@ class JSON_handler{
         JSON_handler();
         Simulation_properties read_header(const char* file_path);
         std::vector<Particle_uptr> read_body(const char* file_path);
-        void save_to_json(const Simulation_properties& props, const std::vector<Particle_uptr>& particles, const char* file_path);
+        void save_to_json(const Simulation_data& data, int iter, const char* file_path);
         ~JSON_handler();
 };
 

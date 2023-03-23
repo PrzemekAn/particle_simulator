@@ -59,6 +59,5 @@ TEST(JSON_handler, read_body){
 TEST(JSON_handler, save_to_json_method){
     Physics_engine engine(std::make_unique<Simulation_data_from_file>("./Output_example.json"));
     JSON_handler test;
-    test.save_to_json(engine.get_simulation_data().properties(), engine.get_simulation_data().particles(), "./test.json");
-    
+    test.save_to_json(engine.get_simulation_data(), engine.get_iteration(), "./test.json");
 }

@@ -1,4 +1,5 @@
 #include "json_handler.h"
+#include "simulation_data.h"
 
 JSON_handler::JSON_handler(){}
 
@@ -75,23 +76,23 @@ std::vector<Particle_uptr> JSON_handler::read_body(const char* file_path){
 return particles_uptr_vector;
 }
 
-void JSON_handler::save_to_json(const Simulation_properties& props, const std::vector<Particle_uptr>& parts, const char* file_path){
+void JSON_handler::save_to_json(const Simulation_data& data, int iter, const char* file_path){
     QJsonObject core_obj;
-    core_obj["width"] = props.m_width;
-    core_obj["height"] = props.m_height;
-    core_obj["iterations_per_second"] = props.m_iterations_per_second;
+    core_obj["width"] = data.properties().m_width;
+    core_obj["height"] = data.properties().m_height;
+    core_obj["iterations_per_second"] = data.properties().m_iterations_per_second;
 
     QJsonObject simulation_obj;
-    simulation_obj["iteration"] = 0;
+    simulation_obj["iteration"] = iter;
 
     QJsonObject particle_obj;
-    particle_obj["id"] = parts[0].get()->id();
-    particle_obj["type"] = typeid(*parts[0].get()).name();
-    particle_obj["weight"] = parts[0].get()->mass();
-    particle_obj["position_x"] = parts[0].get()->position()[0];
-    particle_obj["position_y"] = parts[0].get()->position()[1];
-    particle_obj["velocity_x"] = parts[0].get()->speed()[0];
-    particle_obj["velocity_y"] = parts[0].get()->speed()[1];
+    particle_obj["id"] = data.particles()[0].get()->id();
+    particle_obj["type"] = typeid(*data.particles()[0].get()).name();
+    particle_obj["weight"] = data.particles()[0].get()->mass();
+    particle_obj["position_x"] = data.particles()[0].get()->position()[0];
+    particle_obj["position_y"] = data.particles()[0].get()->position()[1];
+    particle_obj["velocity_x"] = data.particles()[0].get()->speed()[0];
+    particle_obj["velocity_y"] = data.particles()[0].get()->speed()[1];
     simulation_obj["particles"] = QJsonArray{particle_obj};
     core_obj["simulation"] = QJsonArray{simulation_obj};
     
